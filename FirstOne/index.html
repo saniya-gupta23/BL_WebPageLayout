@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A structured layout with a left sidebar, header, footer, and a card gallery.">
+    <title>Card Layout with Sidebar</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: #3498DB;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Sidebar Navbar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: #2C3E50;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 1em;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background: #34495E;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            padding: 2em;
+            flex: 1;
+        }
+
+        /* Cards Section */
+        .cards-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cards-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 300px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 2px;
+        }
+
+        .card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .card button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card button:hover {
+            background: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: #27AE60;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+        }
+    
+      /* Media Objects Section */
+      .media-objects-container {
+        margin-top: 40px;
+        padding: 20px;
+    }
+
+    .media-objects-container h2 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .media-object {
+        display: flex;
+        align-items: center;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .media-object-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .media-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 5px;
+        margin-right: 15px;
+    }
+
+    .media-object-reverse .media-img {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .media-content {
+        flex: 1;
+    }
+
+    .media-content h3 {
+        font-size: 1.3em;
+        margin-bottom: 5px;
+    }
+
+    .media-content p {
+        color: #555;
+        font-size: 1em;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>Website Header</header>
+
+    <!-- Sidebar Navbar -->
+    <nav class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Cards Section -->
+        <section class="cards-container">
+            <h2>Image Cards</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="tiger.jpg" alt="1">
+                    <h3>Innovative Solutions</h3>
+                    <p>Seamlessly visualize quality.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="2.jpg" alt="2">
+                    <h3>Efficient Design</h3>
+                    <p>Completely synergize.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="3.jpg" alt="3">
+                    <h3>Dynamic Engagement</h3>
+                    <p>Dynamically procrastinate.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="4.jpg" alt="">
+                    <h3>Seamless Experience</h3>
+                    <p>Visualize quality networks.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="5.jpg" alt="5">
+                    <h3>Reliable Performance</h3>
+                    <p>Engage seamlessly.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="6.jpg" alt="6">
+                    <h3>Future Technology</h3>
+                    <p>Premier niche markets.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="7.jpg" alt="7">
+                    <h3>Creative Ideas</h3>
+                    <p>Think outside the box.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="cat.jpg" alt="8">
+                    <h3>Global Reach</h3>
+                    <p>Expanding worldwide.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="fox.jpg" alt="9">
+                    <h3>Smart Solutions</h3>
+                    <p>Redefining technology.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </section>
+
+            <!-- Media Objects Section -->
+    <section class="media-objects-container">
+      <h2>Media Objects</h2>
+
+      <!-- Media Object 1 (Left Image) -->
+      <div class="media-object">
+          <img src="image1.png" alt="Media Image" class="media-img">
+          <div class="media-content">
+              <h3>Organically Synthesized</h3>
+              <p>Leverage agile frameworks to provide a robust synopsis for high-level overviews.</p>
+          </div>
+      </div>
+
+      <!-- Media Object 2 (Right Image) -->
+      <div class="media-object media-object-reverse">
+          <img src="image2.png" alt="Media Image" class="media-img">
+          <div class="media-content">
+              <h3>Strategically Engineered</h3>
+              <p>Collaborative thinking fosters corporate strategy and growth.</p>
+          </div>
+      </div>
+
+      <!-- Media Object 3 (Left Image) -->
+      <div class="media-object">
+          <img src="image3.png" alt="Media Image" class="media-img">
+          <div class="media-content">
+              <h3>Holistically Integrated</h3>
+              <p>Capitalize on low-hanging fruit to identify a ballpark value-added activity.</p>
+          </div>
+      </div>
+
+      <!-- Media Object 4 (Right Image) -->
+      <div class="media-object media-object-reverse">
+          <img src="image4.png" alt="Media Image" class="media-img">
+          <div class="media-content">
+              <h3>Seamlessly Implemented</h3>
+              <p>Organically grow holistic worldviews via best-of-breed innovation.</p>
+          </div>
+      </div>
+  </section>
+    </div>
+
+    
+
+    <!-- Footer -->
+    <footer>Website Footer</footer>
+
+</body>
+</html>  
